@@ -1,0 +1,20 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use './blocks/header';
+@use './blocks/logo';
+@use './blocks/navigation';
+@use './blocks/util';
+@use './blocks/burger-button';
+@use './blocks/promo';
+@use './blocks/catalog';
+@use './blocks/head';
+@use './blocks/card';
+@use './blocks/about';
+@use './blocks/footer';
+@use './blocks/contacts';
+@use './blocks/modal';
+@use './blocks/cart';

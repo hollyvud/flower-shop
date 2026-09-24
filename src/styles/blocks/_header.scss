@@ -1,0 +1,58 @@
+@use '../helpers' as *;
+
+.header{
+    position: sticky;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    animation-name: scrolling-header;
+    animation-fill-mode: both;
+    animation-timeline: scroll();
+    animation-range: rem(100) rem(200);
+    background-color: var(--color-back-header);
+
+    padding: rem(16) 0 rem(16) 0;
+
+    @include mobile{
+        padding: rem(8) 0 rem(8) 0;
+    }
+    
+    @keyframes scrolling-header{
+        to{
+            box-shadow: 0 0 1rem 0 var(--color-gray-40);
+        }
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    &__overlay{
+        @include mobile-above{
+            display: contents;
+        }
+
+        @include mobile{
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            row-gap: 3rem;
+            padding: 1rem;
+            background-color: var(--color-back-header);
+
+            margin-top: rem(60);
+            
+            transition-duration: var(--transition-duration);
+
+            &:not(.is-active){
+                @include hide;
+                translate: 100%;
+            }
+        }
+    }
+}

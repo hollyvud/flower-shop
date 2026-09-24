@@ -1,0 +1,142 @@
+@use '../helpers' as *;
+
+.footer{
+    background-color: var(--color-accent);
+
+    &__body{
+        border-top: rem(1) solid var(--color-back-header);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: rem(80);
+
+        padding: rem(48) rem(18) rem(48) rem(18);
+
+        @include laptop{
+            column-gap: rem(32);
+        }
+
+        @include mobile{
+            flex-direction: column;
+            row-gap: rem(8);
+
+            padding: rem(8) 0 rem(8) 0;
+        }
+    }
+
+    &__menu{
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        width: 100%;
+
+        @include mobile{
+            display: none;
+        }
+
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+
+        @include laptop{
+            flex-direction: column;
+            row-gap: rem(8);
+        }
+
+        
+
+        &-item{
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+
+            @include laptop{
+                margin-right: auto;
+            }
+        }
+
+        &-link{
+            margin-right: auto;
+        }
+        
+    }
+
+    &__contact{
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(8);
+
+        justify-content: space-between;
+        height: 100%;
+        
+    }
+
+    &__save{
+        width: auto;
+        display: flex;
+        flex-direction: column;
+
+        margin: auto 0 auto 0;
+
+        @include mobile{
+            flex-direction: row;
+        }
+    }
+
+    &__text{
+        font-family: var(--font-family-base);
+        font-weight: 200;
+        font-size: rem(16);
+        line-height: 135%;
+        color: var(--color-white);
+
+        margin-right: auto;
+        white-space: nowrap;
+
+        @include mobile{
+            margin: 0;
+        }
+
+        &-one{
+            font-family: var(--font-family-base);
+            font-weight: 200;
+            font-size: rem(16);
+            line-height: 135%;
+            color: var(--color-white);
+
+            margin-right: auto;
+            white-space: nowrap;
+
+            @include mobile{
+                margin: 0;
+            }
+        }
+    }
+
+    a {
+        font-family: var(--font-family-accent);
+        font-weight: 200;
+        font-size: rem(16);
+        line-height: 135%;
+        color: var(--color-white);
+    }
+
+    h2 {
+        font-family: var(--font-family-base);
+        font-weight: 400;
+        font-size: rem(36);
+        line-height: 95%;
+        letter-spacing: -0.02em;
+        color: var(--color-back-header);
+    }
+}

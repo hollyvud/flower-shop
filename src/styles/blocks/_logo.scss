@@ -1,0 +1,48 @@
+@use '../helpers' as *;
+
+.logo{
+    &__container{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        column-gap: rem(16);
+
+        @include tablet{
+            column-gap: 0;
+        }
+    }
+
+    &__image{
+        width: rem(25);
+        height: rem(48);
+
+        @include tablet{
+            width: rem(20);
+        }
+        @include mobile{
+            width: rem(20);
+        }
+
+        &-inner{
+            object-fit: cover;
+
+            &--dark{
+                color: var(--color-back-header);
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__name{
+        font-size: rem(36);
+
+        @include tablet{
+            display: none;
+        }
+    }
+}

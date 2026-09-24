@@ -1,0 +1,82 @@
+@use '../helpers' as *;
+
+.util{
+    &__container{
+        display: flex;
+        flex-direction: row;
+        column-gap: rem(16);
+    }
+
+    &__button{
+        
+        border: 1px solid var(--color-accent);
+        border-radius: rem(100);
+
+        height: rem(48);
+        width: rem(48);
+
+        background-color: var(--color-back-header);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-icon{
+            fill: black;
+        }
+
+        
+
+        &-kurv{
+            margin-left: rem(16);
+            padding: 0 rem(13);
+
+            border: 1px solid var(--color-accent);
+            border-radius: rem(100);
+
+            height: rem(48);
+            
+
+            background-color: var(--color-back-header);
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:active{
+                opacity: 0.2;
+            }
+            &:hover{
+                border: 2px solid var(--color-accent);
+                transition-duration: 0s;
+            }
+        }
+
+        &:active{
+            opacity: 0.2;
+        }
+        &:hover{
+            border: 2px solid var(--color-accent);
+            transition-duration: 0s;
+        }
+    }
+
+    &__cart{
+        margin-left: rem(8);
+
+        border-bottom: 1px solid var(--color-accent);;
+
+        &--quantity{
+            font-family: var(--font-family-accent);
+            font-weight: 600;
+            font-size: rem(16);
+            line-height: 135%;
+            color: var(--color-accent);
+            white-space: nowrap;
+        }
+
+        &--none{
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use '../helpers' as *;
+
+.navigation{
+    width: 100%;
+    margin: 0 6% 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container{
+        width: 100%;
+    }
+
+    &__menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-link{
+            font-weight: 200;
+            font-size: rem(16);
+            line-height: 135%;
+        }
+
+        @include mobile{
+            flex-direction: column;
+            row-gap: rem(30);
+        }
+    }
+
+    @include mobile{
+        margin: 0;
+    }
+}
