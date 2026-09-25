@@ -4,6 +4,7 @@ import './styles/main.scss'
 
 import { Modal } from "./components/modal/AllBuket";
 import { ModalFlow } from "./components/modal/AllFlow";
+import { ModalFavorite } from "./components/modal/Favorite";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -57,9 +58,30 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalFlowOpen, setIsModalFlowOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isFavoriteOpen, setIsFavoriteOpen] = useState(false);
 
 
   const [cartContent, setCartContent] = useState([]);
+  const [favoriteContent, setFavoriteContent] = useState([]);
+
+
+  const addToFavorite = (item) => {
+  setFavoriteContent((currentFavorite) => {
+    const existingItem = currentFavorite.find(
+      (favoriteItem) => favoriteItem.id === item.id
+    );
+
+    if (existingItem) {
+      return currentFavorite.filter((noItem) => noItem.id !== item.id);
+    }
+
+    return [
+      ...currentFavorite,
+      item
+    ];
+  });
+};
+
   
 
   const addToCart = (item) => {
@@ -97,6 +119,52 @@ function App() {
 
   return (
     <>
+      <ModalFavorite isOpen={isFavoriteOpen} onClose={() => setIsFavoriteOpen(false)}>
+        <div className="modal__subtitle">
+          <p className="modal__text">Выберите свой букет.</p>
+        </div>
+        <div className="modal__catalog">
+          {favoriteContent.map((item) => (
+            <div className="modal__card" key={item.id}>
+              <picture className="modal__picture">
+                <img src={item.src} className="modal__picture--img" alt="" />
+              </picture>
+              <div className="modal__content">
+                <div className="modal__body">
+                  <div className="modal__heading">
+                    <h5 className="modal__name">{item.name}</h5>
+                  </div>
+                  <div className="modal__object">
+                    <div className="modal__comparue">
+                      <p className="modal__comparue--text">Состав букета:</p>
+                      <p className='modal__bold'>
+                        {item.flow?.join(", ")}
+                      </p>
+                    </div>
+                    <div className="modal__size">
+                      <p className="modal__height">Высота: <span className='modal__bold'>{item.height}см</span></p>
+                      <p className="modal__width">Ширина: <span className='modal__bold'>{item.width}см</span></p>
+                    </div>
+                  </div>
+                  <div className="modal__buy">
+                    <h5 className="modal__title modal__price">{item.price} руб.</h5>
+                    <div className="modal__buttons">
+                      <div className="promo__button">
+                        <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(item)}><span className='promo__btn--inner'>В корзину</span></button>
+                      </div>
+                      <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(item)}>
+                        <span className='head__button--inner'>В избранное</span>
+                        <Favorite className="card__favorite-icon"/>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </ModalFavorite>
+
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className="modal__subtitle">
           <p className="modal__text">Выберите свой букет.</p>
@@ -131,7 +199,7 @@ function App() {
                       <div className="promo__button">
                         <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(buket)}><span className='promo__btn--inner'>В корзину</span></button>
                       </div>
-                      <button className="head__button" aria-label="Добавить в избранное">
+                      <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(buket)}>
                         <span className='head__button--inner'>В избранное</span>
                         <Favorite className="card__favorite-icon"/>
                       </button>
@@ -174,7 +242,7 @@ function App() {
                       <div className="promo__button">
                         <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(flow)}><span className='promo__btn--inner'>В корзину</span></button>
                       </div>
-                      <button className="head__button" aria-label="Добавить в избранное">
+                      <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(flow)}>
                         <span className='head__button--inner'>В избранное</span>
                         <Favorite className="card__favorite-icon"/>
                       </button>
@@ -186,7 +254,7 @@ function App() {
           ))}
         </div>
       </ModalFlow>
-      <Header onCartOpen={() => setIsCartOpen(!isCartOpen)} cart={cartContent}/>
+      <Header onCartOpen={() => setIsCartOpen(!isCartOpen)} cart={cartContent} onFavoriteOpen={() => setIsFavoriteOpen(!isFavoriteOpen)}/>
       <Cart isOpen={isCartOpen} cart={cartContent} onClose={() => setIsCartOpen(false)} onRemove={removeFromCart} toAdd={addToCart}/>
       <main>
         <section className='promo'>
@@ -298,7 +366,7 @@ function App() {
                       <img src={buket.src} className="card__img" alt={buket.name}/>
                     </picture>
                     <div className="card__utils">
-                      <button className="card__favorite" aria-label={`Добавить ${buket.name} в избранное`}>
+                      <button className="card__favorite" aria-label={`Добавить ${buket.name} в избранное`} onClick={() => addToFavorite(buket)}>
                         <Favorite className="card__favorite-icon" />
                       </button>
                       <div className="card__body card__body--brown">
@@ -441,7 +509,7 @@ function App() {
                       <img src={flow.src} className="card__img" alt={flow.name}/>
                     </picture>
                     <div className="card__utils">
-                      <button className="card__favorite--light" aria-label={`Добавить ${flow.name} в избранное`}>
+                      <button className="card__favorite--light" aria-label={`Добавить ${flow.name} в избранное`} onClick={() => addToFavorite(flow)}>
                         <Favorite className="card__favorite-icon" />
                       </button>
                       <div className="card__body card__body--silver">

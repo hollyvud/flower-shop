@@ -8,7 +8,7 @@ import Burger from '../icons/burger-button.svg?react'
 
 
 
-function Header({ onCartOpen, cart }) {
+function Header({ onCartOpen, cart, onFavoriteOpen, favorite }) {
 
   //mobile
 
@@ -57,7 +57,7 @@ function Header({ onCartOpen, cart }) {
             </div>
             <div className="header__util util">
               <div className="util__container">
-                <button className="util__button">
+                <button className="util__button" onClick={onFavoriteOpen}>
                   <Favorite className="util__button-icon"/>
                 </button>
                 <button className="util__button">
