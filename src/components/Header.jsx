@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Logo from '../icons/logo.svg?react'
 import Favorite from '../icons/favoritter.svg?react'
+import FavoriteActive from '../icons/favoritter-dark.svg?react'
 import Kurv from '../icons/kurv-icon.svg?react'
 import Account from '../icons/account.svg?react'
 import Burger from '../icons/burger-button.svg?react'

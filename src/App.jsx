@@ -30,7 +30,8 @@ import FlowIconFive from './icons/flow-icon-5.svg?react';
 import FlowIconSix from './icons/flow-icon-6.svg?react';
 
 import Arrow from './icons/Vector.svg?react';
-import Favorite from './icons/favoritter-light.svg?react'
+import Favorite from './icons/favoritter-light.svg?react';
+import FavoriteActive from './icons/favoritter-dark.svg?react';
 
 
 function App() {
@@ -153,8 +154,7 @@ function App() {
                         <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(item)}><span className='promo__btn--inner'>В корзину</span></button>
                       </div>
                       <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(item)}>
-                        <span className='head__button--inner'>В избранное</span>
-                        <Favorite className="card__favorite-icon"/>
+                        <span className='head__button--inner'>Убрать из избранного</span>
                       </button>
                     </div>
                   </div>
@@ -201,7 +201,11 @@ function App() {
                       </div>
                       <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(buket)}>
                         <span className='head__button--inner'>В избранное</span>
-                        <Favorite className="card__favorite-icon"/>
+                        {favoriteContent.some((item) => item.id ===buket.id) ? (
+                          <FavoriteActive className="card__favorite-icon" />
+                        ) : (
+                          <Favorite className="card__favorite-icon" />
+                        )}
                       </button>
                     </div>
                   </div>
@@ -244,7 +248,11 @@ function App() {
                       </div>
                       <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(flow)}>
                         <span className='head__button--inner'>В избранное</span>
-                        <Favorite className="card__favorite-icon"/>
+                        {favoriteContent.some((item) => item.id ===flow.id) ? (
+                          <FavoriteActive className="card__favorite-icon" />
+                        ) : (
+                          <Favorite className="card__favorite-icon" />
+                        )}
                       </button>
                     </div>
                   </div>
@@ -276,79 +284,6 @@ function App() {
             </div>
           </div>
         </section>
-        {/*<section className='catalog'>
-          <div className="catalog__container container">
-            <div className="catalog__head head">
-              <h2 className="head__title">Авторские букеты</h2>
-              <button className="head__button" onClick={() => setIsModalOpen(true)}>
-                <span className='head__button--inner'>Смотреть все</span>
-                <Arrow className="head__button--arrow"/>
-              </button>
-            </div>
-            <div className="catalog__body">
-              <div className="catalog__cards">
-                <div className="catalog__card--main card">
-                  <img src={buketOne} className="card__img" alt="" />
-                  <div className="card__utils">
-                    <button className="card__favorite">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--brown">
-                      <h5 className="card__title">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title card__price">15000 руб.</h5>
-                        <button className="card__button">
-                          <span className="card__button--inner">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="catalog__card card">
-                  <picture className="card__picture">
-                    <img src={buketTwo} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--brown">
-                      <h5 className="card__title">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title card__price">15000 руб.</h5>
-                        <button className="card__button">
-                          <span className="card__button--inner">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="catalog__card card">
-                  <picture className="card__picture">
-                    <img src={buketThree} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--brown">
-                      <h5 className="card__title">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title card__price">15000 руб.</h5>
-                        <button className="card__button">
-                          <span className="card__button--inner">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="catalog__description">
-                <p className="catalog__text">«Авторские букеты — это искусство, рожденное из вдохновения и мастерства флористов. Мы соединяем нежность природы с нашей любовью к красоте, чтобы каждый букет был уникальным. Наши композиции создаются для тех, кто ценит особенные моменты и хочет дарить впечатления, а не просто цветы.»</p>
-              </div>
-            </div>
-          </div>
-        </section>*/}
         <section className="catalog">
           <div className="catalog__container container">
             <div className="catalog__head head">
@@ -367,7 +302,11 @@ function App() {
                     </picture>
                     <div className="card__utils">
                       <button className="card__favorite" aria-label={`Добавить ${buket.name} в избранное`} onClick={() => addToFavorite(buket)}>
-                        <Favorite className="card__favorite-icon" />
+                        {favoriteContent.some((item) => item.id ===buket.id) ? (
+                          <FavoriteActive className="card__favorite-icon" />
+                        ) : (
+                          <Favorite className="card__favorite-icon" />
+                        )}
                       </button>
                       <div className="card__body card__body--brown">
                         <h5 className="card__title">{buket.name}</h5>
@@ -399,100 +338,6 @@ function App() {
             </div>
           </div>
         </section>
-        {/*<section className='catalog--light'>
-          <div className="catalog__container container">
-            <div className="catalog__head head">
-              <h2 className="head__title">Собрать букет</h2>
-              <button className="head__button--light" onClick={() => setIsModalFlowOpen(true)}>
-                <span className='head__button--inner'>Смотреть все</span>
-                <Arrow className="head__button--arrow"/>
-              </button>
-            </div>
-            <div className="catalog--light__body">
-              <div className="catalog__cards">
-                <div className="catalog--light__card card">
-                  <picture className="card__picture">
-                    <img src={flowOne} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite--light">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--silver">
-                      <h5 className="card__title--light">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title--light card__price">15000 руб.</h5>
-                        <button className="card__button--light">
-                          <span className="card__button--inner-light">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="catalog--light__card card">
-                  <picture className="card__picture">
-                    <img src={flowTwo} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite--light">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--silver">
-                      <h5 className="card__title--light">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title--light card__price">15000 руб.</h5>
-                        <button className="card__button--light">
-                          <span className="card__button--inner-light">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="catalog--light__card card">
-                  <picture className="card__picture">
-                    <img src={flowThree} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite--light">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--silver">
-                      <h5 className="card__title--light">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title--light card__price">15000 руб.</h5>
-                        <button className="card__button--light">
-                          <span className="card__button--inner-light">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="catalog--light__card card">
-                  <picture className="card__picture">
-                    <img src={flowFour} className="card__img" alt="" />
-                  </picture>
-                  <div className="card__utils">
-                    <button className="card__favorite--light">
-                      <Favorite className="card__favorite-icon"/>
-                    </button>
-                    <div className="card__body card__body--silver">
-                      <h5 className="card__title--light">Поцелуй солнца</h5>
-                      <div className="card__buy">
-                        <h5 className="card__title--light card__price">15000 руб.</h5>
-                        <button className="card__button--light">
-                          <span className="card__button--inner-light">В корзину</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="catalog--light__description">
-                <p className="catalog__text">Каждый букет может быть отражением вашей истории. Подберите любимые цветы, оттенки и форму — и мы создадим композицию, которая подчеркнёт вашу индивидуальность. Здесь всё зависит только от ваших желаний.</p>
-              </div>
-            </div>
-          </div>
-        </section>*/}
         <section className="catalog--light">
           <div className="catalog__container container">
             <div className="catalog__head head">
@@ -510,7 +355,11 @@ function App() {
                     </picture>
                     <div className="card__utils">
                       <button className="card__favorite--light" aria-label={`Добавить ${flow.name} в избранное`} onClick={() => addToFavorite(flow)}>
-                        <Favorite className="card__favorite-icon" />
+                        {favoriteContent.some((item) => item.id ===flow.id) ? (
+                          <FavoriteActive className="card__favorite-icon" />
+                        ) : (
+                          <Favorite className="card__favorite-icon" />
+                        )}
                       </button>
                       <div className="card__body card__body--silver">
                         <h5 className="card__title--light">{flow.name}</h5>
