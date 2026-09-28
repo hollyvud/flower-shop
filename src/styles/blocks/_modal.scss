@@ -6,6 +6,7 @@
     max-height: rem(530);
 
     padding: rem(15) rem(20) rem(15) rem(20);
+    margin: 0 35px;
     border-radius: rem(50);
     
 
@@ -29,11 +30,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: rem(50);
         row-gap: 3rem;
         padding: 1rem;
         background-color: rgba(0, 0, 0, 0.5);
         transition-duration: var(--transition-duration);
+        overflow-y: hidden;
     }
 
     &__header{

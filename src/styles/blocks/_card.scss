@@ -105,6 +105,10 @@
             &:active{
                 opacity: 0.5;
             }
+
+            @include mobile{
+                display: none;
+            }
         }
     }
 
