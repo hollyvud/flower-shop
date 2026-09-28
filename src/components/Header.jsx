@@ -51,7 +51,7 @@ function Header({ onCartOpen, cart, onFavoriteOpen, favorite }) {
                     <a href="#about" className="navigation__menu-link" onClick={clickOpenMenu}>О нас</a>
                   </li>
                   <li className="navigation__menu-item">
-                    <a href="#contact" className="navigation__menu-link">Контакты</a>
+                    <a href="#contact" className="navigation__menu-link" onClick={clickOpenMenu}>Контакты</a>
                   </li>
                 </ul>
               </div>

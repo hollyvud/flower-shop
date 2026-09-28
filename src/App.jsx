@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import './styles/main.scss'
 
@@ -62,8 +62,55 @@ function App() {
   const [isFavoriteOpen, setIsFavoriteOpen] = useState(false);
 
 
-  const [cartContent, setCartContent] = useState([]);
-  const [favoriteContent, setFavoriteContent] = useState([]);
+  //localsorage
+  const CART_STORAGE_KEY = 'flowerShop_cart';
+  const FAVORITES_STORAGE_KEY = 'flowerShop_favorites';
+
+
+  const [cartContent, setCartContent] = useState(() => {
+    try {
+      const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+      return savedCart ? JSON.parse(savedCart) : [];
+
+    } catch (error) {
+      console.error('Ошибка при загрузке корзины:', error);
+      return [];
+    }
+  });
+
+  const [favoriteContent, setFavoriteContent] = useState(() => {
+    try {
+      const savedFavorite = localStorage.getItem(FAVORITES_STORAGE_KEY);
+      return savedFavorite ? JSON.parse(savedFavorite) : [];
+      
+    } catch (error) {
+      console.error('Ошибка при загрузке избранного', error);
+      return [];
+    }
+  });
+
+  // синхрон localstorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartContent));
+      console.log('Корзина сохранена в localStorage:', cartContent);
+    } catch (error) {
+      console.error('Ошибка при сохранении корзины:', error);
+    }
+  }, [cartContent]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favoriteContent));
+      console.log('Избранное сохранено в localStorage:', favoriteContent);
+    } catch (error) {
+      console.error('Ошибка при сохранении избранного:', error);
+    }
+  }, [favoriteContent]);
+
+
+
+  //конец localstorage
 
 
   const addToFavorite = (item) => {
