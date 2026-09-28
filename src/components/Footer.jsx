@@ -8,7 +8,7 @@ function Footer() {
 
   return (
     <>
-      <footer className="footer">
+      <footer className="footer" id='contact'>
         <div className="footer__container container">
           <div className="footer__contacts contacts">
             <div className="contacts__header">

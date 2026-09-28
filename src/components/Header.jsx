@@ -42,16 +42,16 @@ function Header({ onCartOpen, cart, onFavoriteOpen, favorite }) {
               <div className="navigation__container">
                 <ul className="navigation__menu">
                   <li className="navigation__menu-item">
-                    <a href="#" className="navigation__menu-link">Авторские букеты</a>
+                    <a href="#buket" className="navigation__menu-link" onClick={clickOpenMenu}>Авторские букеты</a>
                   </li>
                   <li className="navigation__menu-item">
-                    <a href="#" className="navigation__menu-link">Собрать букет</a>
+                    <a href="#flow" className="navigation__menu-link" onClick={clickOpenMenu}>Собрать букет</a>
                   </li>
                   <li className="navigation__menu-item">
-                    <a href="#" className="navigation__menu-link">О нас</a>
+                    <a href="#about" className="navigation__menu-link" onClick={clickOpenMenu}>О нас</a>
                   </li>
                   <li className="navigation__menu-item">
-                    <a href="#" className="navigation__menu-link">Контакты</a>
+                    <a href="#contact" className="navigation__menu-link">Контакты</a>
                   </li>
                 </ul>
               </div>

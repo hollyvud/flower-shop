@@ -37,23 +37,23 @@ import FavoriteActive from './icons/favoritter-dark.svg?react';
 function App() {
 
   const buketsAll = [
-    {id: 1,name:"Первый букет",src:buketOne, price:1234, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 2,name:"Второй букет",src:buketTwo, price:23032, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 3,name:"Третий букет",src:buketThree, price:2, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 4,name:"Четвертый букет",src:buketThree, price:234353, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 5,name:"Пятый букет",src:buketThree, price:343, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 6,name:"Шестой букет",src:buketThree, price:1000000, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
-    {id: 7,name:"Седьмой букет",src:buketThree, price:345, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234},
+    {id: 1,name:"Первый букет",src:buketOne, price:1234, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 2,name:"Второй букет",src:buketTwo, price:23032, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 3,name:"Третий букет",src:buketThree, price:2, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 4,name:"Четвертый букет",src:buketThree, price:234353, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 5,name:"Пятый букет",src:buketThree, price:343, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 6,name:"Шестой букет",src:buketThree, price:1000000, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
+    {id: 7,name:"Седьмой букет",src:buketThree, price:345, desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", flow: ["роза", "тюльпан", "говно", "гартензия"], width:123, height: 234, buket: true},
   ];
 
     const flowsAll = [
-    {id: 8,name:"Первые цветы",src:flowOne, price:"1234", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Желтый"},
-    {id: 9,name:"Вторые цветы",src:flowTwo, price:"23032", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Розовый"},
-    {id: 10,name:"Третьи цветы",src:flowThree, price:"2", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Красный"},
-    {id: 11,name:"Четвертые цветы",src:flowFour, price:"234353", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый"},
-    {id: 12,name:"Пятые цветы",src:flowFour, price:"343", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый"},
-    {id: 13,name:"Шестые цветы",src:flowFour, price:"1000000", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый"},
-    {id: 14,name:"Седьмые цветы",src:flowFour, price:"345", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый"},
+    {id: 8,name:"Первые цветы",src:flowOne, price:"1234", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Желтый", buket: false},
+    {id: 9,name:"Вторые цветы",src:flowTwo, price:"23032", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Розовый", buket: false},
+    {id: 10,name:"Третьи цветы",src:flowThree, price:"2", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Красный", buket: false},
+    {id: 11,name:"Четвертые цветы",src:flowFour, price:"234353", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый", buket: false},
+    {id: 12,name:"Пятые цветы",src:flowFour, price:"343", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый", buket: false},
+    {id: 13,name:"Шестые цветы",src:flowFour, price:"1000000", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый", buket: false},
+    {id: 14,name:"Седьмые цветы",src:flowFour, price:"345", desc: "Так то так то, состоит из этого и этого. Служит долго и вообще он очень красивый. Мы его очень сильно люим и дорожим, вообще жалко вам отдавать, но так сложилась судьба, чтож поделать. Ну всё, забирайте и ухадите, не хочу вас больше видеть, гады..", country: "Россия", color: "Фиолетовый", buket: false},
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -121,47 +121,65 @@ function App() {
   return (
     <>
       <ModalFavorite isOpen={isFavoriteOpen} onClose={() => setIsFavoriteOpen(false)}>
-        <div className="modal__subtitle">
-          <p className="modal__text">Выберите свой букет.</p>
-        </div>
+        
         <div className="modal__catalog">
-          {favoriteContent.map((item) => (
-            <div className="modal__card" key={item.id}>
-              <picture className="modal__picture">
-                <img src={item.src} className="modal__picture--img" alt="" />
-              </picture>
-              <div className="modal__content">
-                <div className="modal__body">
-                  <div className="modal__heading">
-                    <h5 className="modal__name">{item.name}</h5>
-                  </div>
-                  <div className="modal__object">
-                    <div className="modal__comparue">
-                      <p className="modal__comparue--text">Состав букета:</p>
-                      <p className='modal__bold'>
-                        {item.flow?.join(", ")}
-                      </p>
-                    </div>
-                    <div className="modal__size">
-                      <p className="modal__height">Высота: <span className='modal__bold'>{item.height}см</span></p>
-                      <p className="modal__width">Ширина: <span className='modal__bold'>{item.width}см</span></p>
-                    </div>
-                  </div>
-                  <div className="modal__buy">
-                    <h5 className="modal__title modal__price">{item.price} руб.</h5>
-                    <div className="modal__buttons">
-                      <div className="promo__button">
-                        <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(item)}><span className='promo__btn--inner'>В корзину</span></button>
+          {favoriteContent.length === 0 ? (
+            <div className="modal__nothing">
+              <p className="modal__nothing--text">Ничего нет...</p>
+            </div>
+          ):(
+            <>
+              {favoriteContent.map((item) => (
+                <div className="modal__card" key={item.id}>
+                  <picture className="modal__picture">
+                    <img src={item.src} className="modal__picture--img" alt="" />
+                  </picture>
+                  <div className="modal__content">
+                    <div className="modal__body">
+                      <div className="modal__heading">
+                        <h5 className="modal__name">{item.name}</h5>
                       </div>
-                      <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(item)}>
-                        <span className='head__button--inner'>Убрать из избранного</span>
-                      </button>
+                      <div className="modal__object">
+                        {item.buket === true ? (
+                          <div className="modal__comparue">
+                            <p className="modal__comparue--text">Состав букета:</p>
+                            <p className='modal__bold'>
+                              {item.flow?.join(", ")}
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="modal__comparue">
+                            <p className="modal__comparue--text">Страна: <span className='modal__bold'>{item.country}</span></p>
+                          </div>
+                        )}
+                        {item.buket === true ? (
+                          <div className="modal__size">
+                            <p className="modal__height">Высота: <span className='modal__bold'>{item.height}см</span></p>
+                            <p className="modal__width">Ширина: <span className='modal__bold'>{item.width}см</span></p>
+                          </div>
+                        ) : (
+                          <div className="modal__size">
+                            <p className="modal__comparue--text">Цвет: <span className='modal__bold'>{item.color}</span></p>
+                          </div>
+                        )}
+                      </div>
+                      <div className="modal__buy">
+                        <h5 className="modal__title modal__price">{item.price} руб.</h5>
+                        <div className="modal__buttons">
+                          <div className="promo__button">
+                            <button className="promo__btn" aria-label="Добавить в корзину" onClick={() => addToCart(item)}><span className='promo__btn--inner'>В корзину</span></button>
+                          </div>
+                          <button className="head__button" aria-label="Добавить в избранное" onClick={() => addToFavorite(item)}>
+                            <span className='head__button--inner'>Убрать из избранного</span>
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))}
+            </>
+          )}
         </div>
       </ModalFavorite>
 
@@ -262,7 +280,9 @@ function App() {
           ))}
         </div>
       </ModalFlow>
+
       <Header onCartOpen={() => setIsCartOpen(!isCartOpen)} cart={cartContent} onFavoriteOpen={() => setIsFavoriteOpen(!isFavoriteOpen)}/>
+
       <Cart isOpen={isCartOpen} cart={cartContent} onClose={() => setIsCartOpen(false)} onRemove={removeFromCart} toAdd={addToCart}/>
       <main>
         <section className='promo'>
@@ -279,12 +299,12 @@ function App() {
                 <h2 className="promo__subtitle">Изысканные композиции, наполненные заботой</h2>
               </div>
               <div className="promo__button">
-                <button className="promo__btn"><span className='promo__btn--inner'>Выбрать букет</span></button>
+                <button className="promo__btn"><span className='promo__btn--inner' onClick={() => setIsModalOpen(true)}>Выбрать букет</span></button>
               </div>
             </div>
           </div>
         </section>
-        <section className="catalog">
+        <section className="catalog" id='buket'>
           <div className="catalog__container container">
             <div className="catalog__head head">
               <h2 className="head__title">Авторские букеты</h2>
@@ -338,7 +358,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="catalog--light">
+        <section className="catalog--light" id='flow'>
           <div className="catalog__container container">
             <div className="catalog__head head">
               <h2 className="head__title">Собрать букет</h2>
@@ -391,7 +411,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="about">
+        <section className="about" id='about'>
           <div className="about__container container">
             <div className="about__head">
               <h2 className="about__title">О нас</h2>
